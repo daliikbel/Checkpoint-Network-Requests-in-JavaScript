@@ -19,6 +19,16 @@ try {
 	let Temp=result.current.temp_c;
 	let City=result.location.name;
 	let Humidity=result.current.humidity;
+
+    if (Temp < 10) {
+        WeatherIcon = "pluie.png";
+    } else if (Temp >= 10 && Temp < 25) {
+        WeatherIcon = "sun.png"; 
+    } else {
+        WeatherIcon = "cloudy.png"; 
+    }
+
+
     // document.getElementById("Days").innerHTML=`<img class="fas fa-sun"><i/> ${Day}`;
 	document.getElementById("City").innerHTML=`City:${City}`
 	document.getElementById("Temp").innerHTML=`<img src="temperature.gif"alt="Temperature GIF"> Temp:${Temp}°C`
